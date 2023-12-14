@@ -16,7 +16,8 @@ const router: Routes = [
         path: 'contac', component: ContacPagesComponent
     },
     {
-        path: 'contries', component: ContacPagesComponent
+        // carga perezoza, en esta entresalo el router padre con el hijo
+        path: 'contries',loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
     },
     {
         path: '**', redirectTo: 'home'
