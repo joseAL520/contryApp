@@ -11,11 +11,28 @@ export class ContriesService {
     
 
 
-    searchCapital( contry:string):Observable<Country[]>  {
-      const url = `${this.urlService}/capital/${contry}`
+    searchCapital( capital:string):Observable<Country[]>  {
+      const url = `${this.urlService}/capital/${capital}`
         return this.httpClient.get<Country[]>(url)
                 .pipe( 
                     catchError( () => of ([]) ) 
                   );
     }
+
+    searchContry(contry:string):Observable<Country[]>{
+      const url = `${this.urlService}/name/${contry}`
+      return this.httpClient.get<Country[]>(url)
+              .pipe( 
+                  catchError( () => of ([]) ) 
+                );
+    }
+
+    searchRegion(region:string):Observable<Country[]>{
+      const url = `${this.urlService}/region/${region}`
+        return this.httpClient.get<Country[]>(url)
+                .pipe( 
+                    catchError( () => of ([]) ) 
+                  );
+    }
+
 }
