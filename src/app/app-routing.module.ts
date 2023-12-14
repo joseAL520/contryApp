@@ -6,9 +6,9 @@ import { AboutPageComponent } from './shared/pages/about-page/about-page.compone
 import { ContacPagesComponent } from './shared/pages/contac-pages/contac-pages.component';
 
 const router: Routes = [
-    {
-        path: 'home', component: HomePagesComponent
-    },
+    // {
+    //     path: 'home', component: HomePagesComponent
+    // },
     {
         path: 'about', component: AboutPageComponent
     },
@@ -20,7 +20,7 @@ const router: Routes = [
         path: 'contries',loadChildren: () => import('./countries/countries.module').then(m => m.CountriesModule)
     },
     {
-        path: '**', redirectTo: 'home'
+        path: '**', redirectTo: 'contries'
     }
 ];
 

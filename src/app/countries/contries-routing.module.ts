@@ -17,6 +17,8 @@ const routes: Routes=[
     },{
         //esto indicia que vamos a recibir un argumento
         path:'by/:id' , component:ContryPageComponent
+    },{
+        path: '**', redirectTo: 'contries'
     }
 ]
 
