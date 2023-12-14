@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ContriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/contry';
 
 @Component({
   selector: 'contries-by-capial-page',
@@ -7,12 +9,16 @@ import { Component } from '@angular/core';
   ]
 })
 export class ByCapialPageComponent {
-  
-  
+
+  public contry: Country[] = []
+
+  constructor(private ContriesService:ContriesService){}
+
 
   searchByCapital(term:string):void{
-    console.log('Desde BycapitalPage');  
-    console.log({term});
+   this.ContriesService.searchCapital(term)
+         .subscribe(contries => this.contry = contries);
   }
 
+  
 }
