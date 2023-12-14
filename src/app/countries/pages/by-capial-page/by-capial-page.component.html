@@ -10,10 +10,6 @@
 <hr>
 <div class="row">
     <div class="col">
-        <ul>
-            <li *ngFor="let item of contry">
-                {{item.capital}}
-            </li>
-        </ul>
+        <conuntry-table [countries]="country"></conuntry-table>
     </div>
 </div>

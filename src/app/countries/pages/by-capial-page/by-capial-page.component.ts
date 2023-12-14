@@ -10,14 +10,14 @@ import { Country } from '../../interfaces/contry';
 })
 export class ByCapialPageComponent {
 
-  public contry: Country[] = []
+  public country: Country[] = []
 
   constructor(private ContriesService:ContriesService){}
 
 
   searchByCapital(term:string):void{
    this.ContriesService.searchCapital(term)
-         .subscribe(contries => this.contry = contries);
+         .subscribe(contries => this.country = contries);
   }
 
   

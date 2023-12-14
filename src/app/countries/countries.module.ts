@@ -8,6 +8,7 @@ import { ByContryPageComponent } from './pages/by-contry-page/by-contry-page.com
 import { ByRegionPageComponent } from './pages/by-region-page/by-region-page.component';
 import { ContryPageComponent } from './pages/contry-page/contry-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { ConuntryTableComponent } from './components/conuntry-table/conuntry-table.component';
 
 
 
@@ -16,7 +17,8 @@ import { SharedModule } from '../shared/shared.module';
     ByCapialPageComponent,
     ByContryPageComponent,
     ByRegionPageComponent,
-    ContryPageComponent
+    ContryPageComponent,
+    ConuntryTableComponent
   ],
   imports: [
     CommonModule,
