@@ -16,7 +16,7 @@ const routes: Routes=[
         path:'by-regin' , component:ByRegionPageComponent
     },{
         //esto indicia que vamos a recibir un argumento
-        path:'by/:id' , component:ContryPageComponent
+        path:'by/:name' , component:ContryPageComponent
     },{
         path: '**', redirectTo: 'contries'
     }
