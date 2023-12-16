@@ -13,7 +13,7 @@ import { switchMap } from 'rxjs';
 })
 export class ContryPageComponent implements OnInit{
   
-  public country: Country[] = []
+  public country?: Country
 
   constructor( 
     private activatedRouter: ActivatedRoute,
@@ -32,8 +32,8 @@ export class ContryPageComponent implements OnInit{
       if(!country){
           return this.router.navigateByUrl('');
       }
-      console.log('Tenmos paiis');
-      return;
+      return this.country = country
+      
     })
   }
 
