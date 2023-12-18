@@ -8,7 +8,14 @@ export class ContriesService {
     
   private urlService:string = 'https://restcountries.com/v3.1'
   constructor(private httpClient: HttpClient) { }
-    
+  
+  private getContriesRequest(url : string):Observable<Country[]>{
+    return this.httpClient.get<Country[]>(url) .pipe( 
+      catchError( () => of ([]) ) 
+    );
+  }
+
+
   searchCountryByAlphaCode( code: string ): Observable<Country | null> {
     const url = `${ this.urlService }/alpha/${ code }`;
     return this.httpClient.get<Country[]>( url )
@@ -20,26 +27,17 @@ export class ContriesService {
   
     searchCapital( capital:string):Observable<Country[]>  {
       const url = `${this.urlService}/capital/${capital}`
-        return this.httpClient.get<Country[]>(url)
-                .pipe( 
-                    catchError( () => of ([]) ) 
-                  );
+        return this.getContriesRequest(url);
     }
 
     searchContry(contry:string):Observable<Country[]>{
       const url = `${this.urlService}/name/${contry}`
-      return this.httpClient.get<Country[]>(url)
-              .pipe( 
-                  catchError( () => of ([]) ) 
-                );
+       return this.getContriesRequest(url);
     }
 
     searchRegion(region:string):Observable<Country[]>{
       const url = `${this.urlService}/region/${region}`
-        return this.httpClient.get<Country[]>(url)
-                .pipe( 
-                    catchError( () => of ([]) ) 
-                  );
+      return this.getContriesRequest(url);
     }
 
 }
